@@ -50,17 +50,17 @@ const WorkExperience = () => {
     };
 
     return (
-        <section id="experience" className="py-24" ref={ref}>
+        <section id="experience" className="py-12 sm:py-16 lg:py-24" ref={ref}>
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.3 }}
                 className="text-center mb-16"
             >
-                <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4">
                     Work Experience
                 </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
                     Professional journey and hands-on experience in software development
                 </p>
             </motion.div>
@@ -95,13 +95,13 @@ const WorkExperience = () => {
                             </div>
 
                             {/* Experience Details */}
-                            <div className="lg:col-span-2 p-8 lg:p-12">
+                            <div className="lg:col-span-2 p-6 sm:p-8 lg:p-12">
                                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                                     <div>
-                                        <h3 className="text-2xl font-bold gradient-text mb-2 group-hover:scale-105 transition-transform duration-300">
+                                        <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-2 group-hover:scale-105 transition-transform duration-300">
                                             {experience.position}
                                         </h3>
-                                        <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                                        <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
                                             {experience.company}
                                         </h4>
                                     </div>
@@ -111,38 +111,38 @@ const WorkExperience = () => {
                                         whileHover={{ scale: 1.1, rotate: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <ExternalLink className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        <ExternalLink className="w-5 h-5 text-blue-600 dark:text-purple-300" />
                                     </motion.button>
                                 </div>
 
                                 {/* Duration and Location */}
                                 <div className="flex flex-wrap gap-4 mb-6">
-                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                                        <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-200">
+                                        <Calendar className="w-4 h-4 text-blue-600 dark:text-purple-300" />
                                         <span className="text-sm font-medium">{experience.duration}</span>
                                     </div>
-                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                                        <MapPin className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-200">
+                                        <MapPin className="w-4 h-4 text-purple-600 dark:text-pink-400" />
                                         <span className="text-sm font-medium">{experience.location}</span>
                                     </div>
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                                <p className="text-gray-600 dark:text-gray-200 mb-6 leading-relaxed">
                                     {experience.description}
                                 </p>
 
                                 {/* Key Achievements */}
                                 <div className="mb-6">
-                                    <h5 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                                        <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                                    <h5 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                                        <Layers className="w-4 h-4 text-blue-600 dark:text-purple-400" />
                                         Key Achievements
                                     </h5>
                                     <ul className="space-y-2">
                                         {experience.achievements.map((achievement, index) => (
                                             <motion.li
                                                 key={index}
-                                                className="flex items-start gap-3 text-gray-600 dark:text-gray-300"
+                                                className="flex items-start gap-3 text-gray-600 dark:text-gray-200"
                                                 initial={{ opacity: 0, x: -10 }}
                                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                                 transition={{ duration: 0.3 }}
@@ -156,15 +156,15 @@ const WorkExperience = () => {
 
                                 {/* Technologies */}
                                 <div>
-                                    <h5 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                                        <Code className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                                    <h5 className="font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                                        <Code className="w-4 h-4 text-purple-600 dark:text-pink-400" />
                                         Technologies Used
                                     </h5>
                                     <div className="flex flex-wrap gap-2">
                                         {experience.technologies.map((tech) => (
                                             <motion.span
                                                 key={tech}
-                                                className="px-3 py-1 glass-effect glass-effect-dark rounded-full text-sm font-medium text-blue-600 dark:text-blue-400 hover:shadow-glow transition-all duration-300"
+                                                className="px-3 py-1 glass-effect glass-effect-dark rounded-full text-sm font-medium text-blue-600 dark:text-purple-300 hover:shadow-glow transition-all duration-300"
                                                 whileHover={{ scale: 1.05, y: -2 }}
                                             >
                                                 {tech}

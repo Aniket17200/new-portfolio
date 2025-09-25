@@ -68,22 +68,22 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24" ref={ref}>
+    <section id="about" className="py-12 sm:py-16 lg:py-24" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4">
           About Me
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
           Passionate about creating intelligent solutions that bridge the gap between AI and reality
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
         {/* Story Section */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -91,9 +91,9 @@ const About = () => {
           transition={{ duration: 0.3 }}
           className="space-y-6"
         >
-          <div className="glass-effect glass-effect-dark rounded-3xl p-8 shadow-glow">
+          <div className="glass-effect glass-effect-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-glow">
             <h3 className="text-2xl font-bold gradient-text mb-6">My Journey</h3>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-gray-600 dark:text-gray-200 leading-relaxed">
               <p>
                 Aspiring software engineer skilled in C++, Object-Oriented Programming (OOP), 
                 React.js, and machine learning. Experienced in developing dynamic React components 
@@ -109,7 +109,7 @@ const About = () => {
 
           {/* Highlights Grid */}
           <motion.div
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -121,11 +121,11 @@ const About = () => {
                 className="glass-effect glass-effect-dark rounded-2xl p-6 hover:shadow-glow transition-all duration-300 group"
                 whileHover={{ scale: 1.02, y: -5 }}
               >
-                <highlight.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mb-3 group-hover:scale-110 transition-transform duration-300" />
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">
+                <highlight.icon className="w-8 h-8 text-blue-600 dark:text-purple-400 mb-3 group-hover:scale-110 transition-transform duration-300" />
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 text-sm">
                   {highlight.title}
                 </h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                   {highlight.description}
                 </p>
               </motion.div>
@@ -138,9 +138,9 @@ const About = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.3 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
-          <div className="glass-effect glass-effect-dark rounded-3xl p-8 shadow-glow">
+          <div className="glass-effect glass-effect-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-glow">
             <h3 className="text-2xl font-bold gradient-text mb-8">Technical Skills</h3>
 
             <div className="space-y-6">
@@ -153,21 +153,21 @@ const About = () => {
                   className="group"
                 >
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium text-gray-900 dark:text-white">
+                    <span className="font-medium text-gray-900 dark:text-gray-100">
                       {skill.name}
                     </span>
-                    <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                    <span className="text-sm text-blue-600 dark:text-purple-400 font-semibold">
                       {skill.level}%
                     </span>
                   </div>
-                  <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div className="relative h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                     <motion.div
-                      className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
+                      className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 rounded-full"
                       initial={{ width: 0 }}
                       animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                       transition={{ duration: 0.5, ease: "easeOut" }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 dark:from-purple-400/30 dark:via-pink-400/30 dark:to-blue-400/30 rounded-full" />
                   </div>
                 </motion.div>
               ))}
@@ -176,7 +176,7 @@ const About = () => {
 
           {/* Quick Stats */}
           <motion.div
-            className="grid grid-cols-3 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -195,7 +195,7 @@ const About = () => {
                 <div className="text-2xl font-bold gradient-text mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="text-sm text-gray-600 dark:text-gray-300">
                   {stat.label}
                 </div>
               </motion.div>

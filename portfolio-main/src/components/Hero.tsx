@@ -4,7 +4,7 @@ import SimpleHero3D from './SimpleHero3D';
 
 const Hero = () => {
   return (
-    <section className="min-h-[calc(100vh-6rem)] flex items-center relative overflow-hidden py-12">
+    <section className="min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-6rem)] flex items-center relative overflow-hidden py-8 sm:py-12">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -33,12 +33,12 @@ const Hero = () => {
         />
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-center relative w-full">
+      <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center relative w-full">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 space-y-8"
+          className="relative z-10 space-y-6 sm:space-y-8 text-center md:text-left"
         >
           {/* Profile Image with Enhanced Styling */}
           <motion.div
@@ -63,7 +63,7 @@ const Hero = () => {
               <img
                 src="https://gqupbfgbhvlhwmcwnkun.supabase.co/storage/v1/object/public/resume1//aniket.jpg"
                 alt="Aniket Gaikwad"
-                className="relative w-36 h-36 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl"
+                className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white dark:border-purple-300 shadow-2xl mx-auto md:mx-0"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-600/20" />
             </div>
@@ -76,7 +76,7 @@ const Hero = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               Hi, I'm{' '}
@@ -99,7 +99,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-200 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
@@ -111,7 +111,7 @@ const Hero = () => {
 
           {/* Enhanced CTA Buttons */}
           <motion.div
-            className="flex gap-4 flex-wrap"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center md:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -120,7 +120,7 @@ const Hero = () => {
               href="https://gqupbfgbhvlhwmcwnkun.supabase.co/storage/v1/object/public/resume1/newresume17.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-8 py-4 rounded-2xl font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 overflow-hidden w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -134,7 +134,7 @@ const Hero = () => {
               href="https://github.com/Aniket17200"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 glass-effect glass-effect-dark border-2 border-blue-500/30 hover:border-blue-500/60 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300"
+              className="group inline-flex items-center gap-2 sm:gap-3 glass-effect glass-effect-dark border-2 border-blue-500/30 dark:border-purple-500/40 hover:border-blue-500/60 dark:hover:border-purple-400/70 text-blue-600 dark:text-purple-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold hover:shadow-glow transition-all duration-300 w-full sm:w-auto justify-center"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

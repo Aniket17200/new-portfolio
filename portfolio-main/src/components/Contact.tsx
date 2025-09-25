@@ -63,17 +63,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24" ref={ref}>
+    <section id="contact" className="py-12 sm:py-16 lg:py-24" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4">
           Let's Connect
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
           Ready to collaborate on exciting projects or discuss innovative ideas? I'd love to hear from you!
         </p>
       </motion.div>
@@ -88,7 +88,7 @@ const Contact = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="glass-effect glass-effect-dark rounded-3xl p-8 shadow-glow"
+            className="glass-effect glass-effect-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-glow"
           >
             <h3 className="text-2xl font-bold gradient-text mb-6 text-center">Get in Touch</h3>
             <div className="grid md:grid-cols-1 gap-4 max-w-2xl mx-auto">
@@ -98,7 +98,7 @@ const Contact = () => {
                   href={method.href}
                   target={method.href.startsWith('http') ? '_blank' : undefined}
                   rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="group block p-6 glass-effect glass-effect-dark rounded-2xl hover:shadow-glow transition-all duration-300"
+                  className="group block p-4 sm:p-6 glass-effect glass-effect-dark rounded-xl sm:rounded-2xl hover:shadow-glow transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -113,19 +113,19 @@ const Contact = () => {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-semibold text-gray-900 dark:text-white">
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100">
                           {method.title}
                         </h4>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">
+                        <span className="text-sm text-gray-500 dark:text-gray-300">
                           {method.subtitle}
                         </span>
                       </div>
 
-                      <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 truncate">
+                      <p className="text-blue-600 dark:text-purple-300 font-medium mb-2 truncate">
                         {method.value}
                       </p>
 
-                      <p className="text-sm text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-gray-600 dark:text-gray-200">
                         {method.description}
                       </p>
                     </div>

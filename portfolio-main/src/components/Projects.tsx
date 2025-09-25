@@ -87,17 +87,17 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24" ref={ref}>
+    <section id="projects" className="py-12 sm:py-16 lg:py-24" ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4">
           Featured Projects
         </h2>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto px-4 sm:px-0">
           Showcasing innovative solutions that blend creativity with cutting-edge technology
         </p>
       </motion.div>
@@ -117,28 +117,28 @@ const Projects = () => {
               <div className="aspect-video lg:aspect-auto min-h-[300px] lg:min-h-[500px]">
                 <YouTubePlayer src={project.youtube || ""} />
               </div>
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
+              <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-2 mb-4">
                   <Star className="w-5 h-5 text-yellow-500 fill-current" />
-                  <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  <span className="text-sm font-semibold text-blue-600 dark:text-purple-300">
                     FEATURED PROJECT
                   </span>
                 </div>
 
-                <h3 className="text-3xl font-bold gradient-text mb-4 group-hover:scale-105 transition-transform duration-300">
+                <h3 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 group-hover:scale-105 transition-transform duration-300">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-200 mb-6 text-base sm:text-lg leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Metrics */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div key={key} className="text-center">
                       <div className="text-2xl font-bold gradient-text">{value}</div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400 capitalize">{key}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-300 capitalize">{key}</div>
                     </div>
                   ))}
                 </div>
@@ -147,14 +147,14 @@ const Projects = () => {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-2 glass-effect glass-effect-dark rounded-full text-sm font-medium text-blue-600 dark:text-blue-400 hover:shadow-glow transition-all duration-300"
+                      className="px-4 py-2 glass-effect glass-effect-dark rounded-full text-sm font-medium text-blue-600 dark:text-purple-300 hover:shadow-glow transition-all duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <motion.a
                     href={project.github}
                     target="_blank"
@@ -168,7 +168,7 @@ const Projects = () => {
                   </motion.a>
 
                   <motion.button
-                    className="group/btn inline-flex items-center gap-2 px-6 py-3 glass-effect glass-effect-dark border border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300"
+                    className="group/btn inline-flex items-center gap-2 px-6 py-3 glass-effect glass-effect-dark border border-blue-500/30 dark:border-purple-500/40 text-blue-600 dark:text-purple-300 rounded-2xl font-semibold hover:shadow-glow transition-all duration-300"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -244,7 +244,7 @@ const Projects = () => {
                 </div>
                 
                 {/* Project Description */}
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed flex-1">
+                <p className="text-gray-600 dark:text-gray-200 mb-4 text-sm leading-relaxed flex-1">
                   {project.description.length > 140 ? 
                     `${project.description.substring(0, 140)}...` : 
                     project.description
@@ -256,24 +256,24 @@ const Projects = () => {
                   {project.techStack.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs glass-effect glass-effect-dark rounded-full text-blue-600 dark:text-blue-400 font-medium"
+                      className="px-3 py-1 text-xs glass-effect glass-effect-dark rounded-full text-blue-600 dark:text-purple-300 font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.techStack.length > 4 && (
-                    <span className="px-3 py-1 text-xs text-gray-500 dark:text-gray-400 font-medium">
+                    <span className="px-3 py-1 text-xs text-gray-500 dark:text-gray-300 font-medium">
                       +{project.techStack.length - 4} more
                     </span>
                   )}
                 </div>
 
                 {/* Project Metrics */}
-                <div className="grid grid-cols-3 gap-2 mb-4 p-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl">
+                <div className="grid grid-cols-3 gap-2 mb-4 p-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-xl">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div key={key} className="text-center">
                       <div className="text-sm font-bold gradient-text">{value}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{key}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-300 capitalize">{key}</div>
                     </div>
                   ))}
                 </div>
@@ -293,7 +293,7 @@ const Projects = () => {
                   </motion.a>
                   
                   <motion.button
-                    className="group/btn px-4 py-3 glass-effect glass-effect-dark border border-blue-500/30 text-blue-600 dark:text-blue-400 rounded-xl text-sm font-semibold hover:shadow-glow transition-all duration-300"
+                    className="group/btn px-4 py-3 glass-effect glass-effect-dark border border-blue-500/30 dark:border-purple-500/40 text-blue-600 dark:text-purple-300 rounded-xl text-sm font-semibold hover:shadow-glow transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
